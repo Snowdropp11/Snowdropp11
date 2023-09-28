@@ -1,0 +1,65 @@
+27.09.2023
+
+tushar agrawal -- trainer
+carolin hr bayan
+martin alman hoca
+
+Miro Board:
+https://miro.com/app/board/uXjVMin2VBo=/?share_link_id=36563712774
+Password: CO-8!2023
+
+
+topics
+1. devsec opps 4.10 13.10 16.10 jenkins - devliver target environmnet CIC Dsolution
+2. docker 18.10 27.10 menti yi containera alacagiz- configure edecegiz
+3. kubernetes 31.10 09.11 10.11 doecorazied kubernetes envorinment a alacagiz.
+4. (insfrastructure as a code) terraform 15.11 01.12 how to deploy kubernetes on aws with terraform
+
+yapilanlari tekrar kendin yap.
+bazi self learning bolumu var..
+bazi faydali linkler olacak
+
+2. Self-Learning track
+https://yam-united.telekom.com/pages/learning-journey-container-orchestration-coding-with-devops/apps/wiki/info/list/view/2f6b58d7-b04e-4b36-9ce5-6c74be52bbb0?currentLanguage=DE
+
+
+3 . Learning journey: https://yam-united.telekom.com/pages/learning-journey-container-orchestration-coding-with-devops/apps/content/home
+
+4. https://strive.devops.t-systems.net/sdportal/    programin sayfasi
+
+
+jira - tasks are here. chosse task as many as you can.
+sertifika icin en az 6 tasks- 3 farkli yerden - branch lari adinlari ile yapar. sonra jira da done a at.
+confluence dokumantasyon olan record larin olacagi.
+
+
+https://strive.devops.t-systems.net/confluence/display/DOLJEY/Training+Environments is the starting point
+
+
+
+Contact Us:
+via Webex channel: webexteams://im?space=f45e5d70-ea7d-11ed-b721-5760b8371504
+via learning_development@t-systems.com
+
+
+27.09
+ogleden sonra oturum
+
+training environmnet
+traing
+only user namespaces
+https://strive.devops.t-systems.net/confluence/display/DOLJEY/Kick-Off tasklar  bunu naltinda
+
+doljey-nexus-ro docker registerden indirmek icin  secret icinde
+
+chart vcsdoe tikladi name kismina ide-01 baska password sec trainig number
+is not ready diye yazialr akiyor.
+ilk url ile password ile girtiyoruz. komutlari uygula docker ile olgili orada hazir yazili olan mail ve sifre ile login oldu
+sonra tekrar indir komutut bir onceki regiostry den soinra
+
+ task 4 taski yapabilrisen
+
+
+training28
+
+conf dsiplay deojey/training +environment

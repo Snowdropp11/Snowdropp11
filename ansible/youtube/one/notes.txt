@@ -1,0 +1,20 @@
+otomation platform
+infrstructure as a code
+agentless
+inventroy / hosts file
+ansible al -m debug -a 'var=inventory_hostname'
+  ansible-vault encrypt vault.yml
+    ansible-vault view vault.yml
+    ansible-vault decrypt vault.yml
+    ansible-vault rekey vault.yml
+ansible-inventory --graph
+nsible all -m command -a 'id ilhan'
+ansible all -m copy name.yml -a 'content="Managed by ansible \n" dest=/etc/motd
+
+
+ ansible all -m command -a 'cat /var/www/index.html'
+ansible-playbook ansible.yml --syntax-check bir ynlis var mi kodda
+
+
+video 11
+https://www.youtube.com/watch?v=tCZDbO6RtwM&list=PLf2TKe70Vk1PB4Q3saZAekmUmTNsDOitJ&index=11

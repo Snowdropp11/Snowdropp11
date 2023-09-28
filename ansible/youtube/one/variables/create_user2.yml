@@ -1,0 +1,14 @@
+---
+- name: creating ilhan and ilhan1 names
+  hosts: all
+  vars_files:
+    - userlist.yml
+  tasks:
+    - name: creating user {{ user1 }} and {{ user2 }}
+      user:
+        name: "{{ user1 }}"
+        state: present
+    - name: create user
+      user:
+        name: "{{ user2 }}"
+        state: absent

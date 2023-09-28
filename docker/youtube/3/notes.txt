@@ -1,0 +1,64 @@
+
+1- wm & continer
+dokcer info ne kadar netweok container var vesaire bilgi veriyor.
+
+
+docker search jawa --- jawa image lerini basar
+
+docker ps
+docker ps -a
+dokcer -v
+docker info
+docker diff
+docker search image_name
+docker pull image_name
+docker run -it --name name image_name
+docker run -d --name name image_name
+docker rmi -f id buradaki i images oldugunu gosteriyor.
+docker ps -q idleri gosteriyor
+docker logs id
+docker run -it -p 8080:80 --name name iamge_id
+docker exec -it container_id bin/sh
+docker tug iamge_name new_image_name #bu imageden yeni isimde yeni image olur
+
+
+# Dockerfile
+docker build -t javaapp:vi .
+docker run -it --name javaa javaapp:v1
+each command is one layer
+
+# volumes
+when container is deleted, data will be lost.
+dockre volume create --name mydata
+docker run --rm -it --name yusuf -p 80:80 -v .:. nginx
+--volumes-from diger container volumune baska bir containerde kullanbilriiz.
+
+# registry
+docker run -d -p 5005:5000 --restart=always --name registry registry:2
+docker tag javaapp localhost:5005/javaapp:v1 isim degistirir. ilk yazan image isimi en son kelime olur
+
+# install jenkins
+docker run -d -8080:8080 -p 5005:5000 -u root -v /Jenkins:/var/jenkins jenkins
+
+
+
+# docke compose
+with docker run command we can only 1 container in one time.
+with docker compose we can run multible containers.
+docker-compose up
+
+
+flask redis nedir--
+
+# cmd run entrypoint
+executable olunca  entrypoint cullniyoruz.
+cmd ise container calsitiktan sonra default kullanilan command.
+run ise daha cok paket yuklememk icin
+
+* shel form instruction command  eg: entrypoint echo "Hello $namemkdir"
+* exec form instruction["executable", "param1", "param2"] eg: entrypoint ["/bin/echo", "Hello, $name"] seklinde olur.
+
+
+
+
+vide 9 hic baslamadimhttps://www.youtube.com/watch?v=4KFQlP0_31Q&list=PLVnWcdGotHcZ8jzNxTvZnqUP29r-9EF9b&index=9

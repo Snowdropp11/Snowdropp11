@@ -1,0 +1,11 @@
+---
+- name: Using facts
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Prints vearious ansible facts
+      debug:
+        msg:
+          My machiene hostname is {{ ansible_hostname }}
+          and domain name is {{ ansible_facts['fqdn'] }}
+          ip4 adress is {{ ansible_facts.default_ipv4.address }}

@@ -1,0 +1,11 @@
+---
+- name: Create user name
+  hosts: all
+  vars:
+    user: yusuf
+    gid: 1001
+    group_id: 1001
+  tasks:
+    - name: creating user {{ user }}
+      user:
+        name: "{{ user }}"

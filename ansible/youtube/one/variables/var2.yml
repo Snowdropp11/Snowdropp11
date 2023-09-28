@@ -1,0 +1,6 @@
+---
+- name: calling the cariable from hosts grourp carass
+  hosts: all
+  tasks:
+    - debug:
+        msg: i like "{{ color1 }}" and "{{ color2 }}" colors

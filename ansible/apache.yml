@@ -1,0 +1,22 @@
+---
+# - name: Update apt cache
+#   hosts: all
+#   tasks:
+#     - name: Run yum update
+#       ansible.builtin.command: yum update
+- name: Example
+  hosts: all
+  tasks:
+    - name: Set environment variable
+      ansible.builtin.shell: echo $MY_ENV_VAR
+      environment:
+      MY_ENV_VAR: my_value
+# ansible.cfg (in the current directory)
+
+# ansible.cfg (in the home directory)
+
+# /etc/ansible/ansible.cfg
+# The recommendation from Ansible is to keep the ansible.cfg file in the root of the project folder to enable
+# users to have independent ansible.cfg files for each project.
+#The inventory file by default is stored in the /etc/ansible/  ---- . If you change the name of the file to something
+# other than hosts, or if you change the location of the hosts file, you will need to use the – i <filename> - it is recommended to keep the inventory file in the root of the project directory.

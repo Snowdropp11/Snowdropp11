@@ -1,0 +1,72 @@
+## video 1
+kubernetes - container orchestration framwewrok- helps manage contaierized applicatiion
+in different environmnet
+
+trend from monolith to microserrices  and increase of containers.
+
+it is high avalibility- no downtime
+scabiltiy or high performance
+disater recovery
+
+#arhticerure
+master and workers notes. execute some tasks. workjer lar asil siis yapan- amster node procesleri mange yapar.
+api server ile konusur. master is controller manager.
+scheudle iicn de master sorumlu.
+2 tane master olur.
+pod - smallest units - contaienr has pods pods have multiple container-data base bir pod. jaweaserver a pod giib
+each pod has own ip address. pods are recreated devamli.
+service 2 tasks 1. ip adress 2 . load balancer
+
+ ##video 2
+ @ componnets of kubernetes
+- node -
+- pod - abstraction over container smallest unit of kubernetes. creates layers
+interact with containers. icinde bircok contienr olsbilri ama 1 application 1 pod genelde.
+each pod has its own ip address. can communtace with database- they can die easily .
+- service an ip address. permanet ip. even if pod dies ip adres stay.
+extarnal service to go out.
+- ingress - service gitmek icin buraya iletilir. handles every incomig requets
+- config map- rebuild push it to repo gibi seyleri congiurationleri yapa r applicationin.
+- secret - ued to store seceret data- base64 encoded format
+- volume - locak machinede yada remote stroga da olabilir . data persistence ile ilgilenmes k8
+- replicalar ile bir pod olurse digerine aktalrilir. service is a load balancer gorevi var,
+application accesible olur bu sayede replicalar sayesinde.
+
+## architecture
+node - podlar var icinde- 3 porocesse must be installed on every node
+worker node does the actual worker.
+kubelet- interact with container and node. it starts the pod
+with a container inside.
+kubeproxy - forwards the requets-
+bu 3 proces sunlar -- 1. kubelet 2. kune proxy 3. container run time
+
+master ise herseyi yapar.
+
+4 proces vardir her master node da -
+1- Api server - like a cluster gateway - gatekkeper gorevi yapar for authentication-
+2- scheduler. requeste bakar . ne kadar cpu resources gerekl ioalcak nodelari ayarlar isleri yapamk icin recoursesa gorevi
+3- controler manager - detecs cluster state stages.
+4- etcd- cluster brain. every changes get saved or updated here. ornegin scheduler ne yapcagini bunun sayesinde bilri.
+
+Advanatages
+replication is easy
+self helaing of k8
+smart scheduling
+
+
+minikube - creates a virtual box on the laptop
+node runs in that virtual box
+1 node 1 k8 cluster
+for testing purpose
+
+kubectl - command line tool CLI of k8 cluster ile iletisime geceris
+
+
+
+kubectl cli for configuring the minikube cluster
+minikube cli is for start up or deleting the cluster.
+
+### ingress
+dsiaridan pod a ulasma.
+
+https://www.youtube.com/watch?v=-ykwb1d0DXU&list=PLy7NrYWoggjziYQIDorlXjTvvwweTYoNC&index=11

@@ -1,0 +1,18 @@
+---
+- name: Example playbook
+  hosts: all
+  tasks:
+    - name: Set environment variable
+      ansible.builtin.shell: echo $MY_ENV_VAR
+      environment:
+        MY_ENV_VAR: my_value
+- name: copy files to destination
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: copy src.txt as dest.txt in the same dir
+      copy:
+        src: ./a.txt
+        dest: /home/a.txt
+      tags:
+        - simple_copy

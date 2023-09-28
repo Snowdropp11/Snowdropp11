@@ -1,0 +1,25 @@
+
+docker ps -aq - a hepsini q ise idsini ver
+docker rm $(docker ps -aq) container siler.
+
+about:blank#blocked
+volumes
+allow sharing of data files folders
+between host and container
+between containers
+
+docker run --name sud -v $(pwd):/usr/share/nginx/html:ro -d -p 80:80 nginx
+buradaki :ro dosyay read only yapar dolayisiya, contianer icerisinde
+degistirilimez. ro olmadan egistirilebilri.
+
+
+dohttp://expressjs.com/en/starter/installing.htmlcker run --name website2 --volumes-from suddd -d -p 8   -- burada bir containerin volume baska cantainere baglaniyor.
+
+image is a template for creating an environmnet of ypur Choise
+
+
+
+2.16 de kaldim
+
+
+https://www.bing.com/videos/search?q=docker+advanced&&view=detail&mid=51DCC071E5C2AF61652851DCC071E5C2AF616528&&FORM=VRDGAR&ru=%2Fvideos%2Fsearch%3Fq%3Ddocker%2Badvanced%26FORM%3DHDRSC4

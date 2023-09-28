@@ -1,0 +1,14 @@
+You can open all the tools you need here via the DEVOPS-AS-A-SERVICE portal
+
+https://strive.devops.t-systems-service.com/sdportal/
+
+Login with your credentials (your e-mail and the password you have choosen via activation)
+Go to the Projects Page via the menu
+You can see the project Key "DOLJEY" (DevOpsLearningJourney) where you are assigned to and all the tools you can use
+
+All tools with a link can be opened by clicking on the links. Try it out.
+These tools are used in this training: Jira, Confluence, Bitbucket, Jenkins, Rancher 2, Nexus (not actively used)
+Rancher 2 must be opened with "Login with keycloak".
+SonarQube must be opened with "Login with keycloak"
+Nexus can be used additionally, as it does not support Single-Sign-On, you have to login seperatly.
+Before you setting up your VSC (Visual Studio Code) familiarise yourself with the rancher 2 tool:

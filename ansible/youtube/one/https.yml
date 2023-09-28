@@ -1,0 +1,17 @@
+---
+- name: Install httpd
+  hosts: all
+  tasks:
+  - name: installing httpd
+    yum:
+      name: httpd
+      state: present
+  - name: correct the index.html
+    copy:
+      content: "<p1>welcome yusuf's page</p1>"
+      dest: /usr/share/nginx/index.html
+  - name: start httpd service
+    service:
+      name: httpd
+      state: started
+      enabled: yes

@@ -1,0 +1,32 @@
+video 1
+automate it tasks.
+q0 dservers are running . you ewant upadte them.
+create users- system rebooz- assign gruops-
+via ssh connection-
+
+yml file with ssh connection remotely.
+more reliable. less errord
+agentless
+
+
+modules- one small spesific task- start nginx server
+veya create a file - copy a file - create cloud instance-
+configuration tool
+
+playbook describe:
+- how and which order
+- what time where (on which machiene)
+- what modules should be executed
+
+video 2
+terraform-
+automate and manage your structure¨
+declerative define ehat end resutl you want
+
+vide 3
+
+
+
+
+
+https://www.youtube.com/watch?v=POPP2WTJ8es&list=PLy7NrYWoggjzmPAyfDQgthSgx6VEVlS0-&index=3

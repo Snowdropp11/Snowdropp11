@@ -1,0 +1,25 @@
+vide0 1
+
+34079d63191a45ba83ab4f8f11fd5c1b
+root/.jenkins/secrets/initialAdminPassword
+
+
+### video 2
+jenkins home herseyin yapildgisakladigi yer. workspace i de burada olustururu.     /root/.jenkins
+/var/lib/jenkins
+
+cd /usr/share/java/  bu direktoride asagidaki komutu calsitiriyoruz
+java -jar jenkins.war --httpPort=9191
+boyle baslatirirz
+
+
+bunu istedigmiz direktory yapabilirz
+
+
+.jenkins dosyasini buraya tasidim. rot un altinday
+
+
+kurs bitti
+
+buradan videolar sec izle
+https://automationstepbystep.com
