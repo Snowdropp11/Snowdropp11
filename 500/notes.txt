@@ -73,3 +73,18 @@ tek bir sey ile ifade etmek zor devopps u. fili bir tarafindan tutup tarif etmek
 yeni metodoloji, agile scrum.
 devops ile ilgili bir kitap okunabilir.
 
+doljey 10 a tikladi .
+steplerdeki comiutlari girmeye basladi.
+html de name usmini ekledi
+ve mesaji ekledi
+git add -u ne demek ??
+
+bit bucket da
+prfufer  martin yazdi
+acilamya gretting DOJjey 10
+silinemsin dedi tiki kaldirdi
+
+Martin Würflein 10/04/2023 11:08 • Password for the selenium-grid: "Doljey-2023-selenium" username is provided on the learning blocks-page 🙂
+When the user enters the code "45 67 89" and clicks submit
+
+10 dan 15 e kadar doljey tasklari ayapabilrisin 14 15 biraz zor kubernetese birkabilrisin
