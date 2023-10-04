@@ -63,3 +63,13 @@ sonra tekrar indir komutut bir onceki regiostry den soinra
 training28
 
 conf dsiplay deojey/training +environment
+
+
+#### 04.10.2023
+Devsecopp
+
+learning block devsecops burada video var. therotical content var.
+tek bir sey ile ifade etmek zor devopps u. fili bir tarafindan tutup tarif etmek gibi.
+yeni metodoloji, agile scrum.
+devops ile ilgili bir kitap okunabilir.
+
