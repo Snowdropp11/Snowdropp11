@@ -1,0 +1,19 @@
+ansible all --list-hosts
+
+ansible -i hosts --list-hosts (bu hit file deki nodelari listeler
+)
+
+
+## AD hoc commands
+
+ansible all -m ping
+ansible all -m user -a "name=yusuf state=present"  user olusturur
+ansible all -m user -a "name=tux state=absent" siler
+
+ansible all -m yum -a 'name="{{ apache_package }}" state=installed'   apache_pachkage yi host da tanimladim
+
+
+
+video 6
+
+https://www.youtube.com/watch?v=i5-OJYkb78o&list=PLtGnc4I6s8dvMkOS0ecQQADV8qJLwlwH9&index=6
