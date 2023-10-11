@@ -1,0 +1,47 @@
+---
+- name: Deploy Apache
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Install Apache
+      yum:
+        name:
+          - httpd
+          - httpd-manual
+          - firewalld
+        state: latest
+
+    - name: Don't Listen All Interfaces
+      lineinfile:
+        path: /etc/httpd/conf/httpd.conf
+        regexp: "^Listen 80"
+        state: absent
+
+    - name: Listen Single Interface
+      lineinfile:
+        path: /etc/httpd/conf/httpd.conf
+        insertafter: "^#Listen"
+        line: "Listen localhost:80"
+
+    - name: Default Page
+      copy:
+        dest: /var/www/html/index.html
+        content: |
+          Welcome to my page
+          This is from yusuf
+
+    - name: Start Services
+      service:
+        name: "{{ item }}"
+        state: started
+        enabled: true
+      loop:
+        - httpd
+        - firewalld
+
+    - name: Open Firewall
+      firewalld:
+        service: http
+        state: enabled
+        permanent: true
+        immediate: true

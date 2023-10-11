@@ -1,0 +1,12 @@
+docker hub a atmak icin bir amage tag lamak gerek once
+docker tag ubu:v2 yusufilhan/ubuntudeneme
+
+sonra docker push yusufilhan/ubuntudeneme
+
+bitti
+
+
+
+
+
+https://www.youtube.com/watch?v=3felwqgDNeQ&list=PLmvLjAZdxZRRDmChHHj4-E32vhdUNgYmX&index=6

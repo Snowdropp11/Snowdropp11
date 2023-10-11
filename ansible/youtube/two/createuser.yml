@@ -1,0 +1,15 @@
+---
+- name: Create New Users
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Create User Task
+      user:
+        name: "{{ item }}"
+        state: present
+        password: "Sd1234"
+        shell: /bin/bash
+      loop:
+        - enes
+        - esref
+        - ayse
