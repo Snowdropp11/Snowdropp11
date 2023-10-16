@@ -17,8 +17,10 @@ ansible-vault encrypt group_vars/redhat ## bu dosyayi sirleri actirir
 cat ile okursak, hasli halini gosterir.
 ansible-playbook --vault-id @prompt createuser.yml boyle yaparak sifreyi girerek dosyayi calsitiririz.
 
+ansible   all -m setup | grep fqdn
+ the Fully Qualified Domain Name of the target host.
+ all hosts in your inventory, gather facts about them, and then use the "grep" command to filter the output to display only the lines containing FQDN information.
 
 
 
-
-https://www.youtube.com/watch?v=vjxVko4Y56E&list=PLtGnc4I6s8dvMkOS0ecQQADV8qJLwlwH9&index=10
+https://www.youtube.com/watch?v=kjQWzRX9tB0&list=PLtGnc4I6s8dvMkOS0ecQQADV8qJLwlwH9&index=11

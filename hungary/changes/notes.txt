@@ -1,0 +1,61 @@
+###  https://www.youtube.com/watch?v=TIYbZyQTK0k
+
+redhat linux patching
+
+step1
+su root ##root ol
+cat /etc/redhat-release ## verify the kernel version
+rmp -q kernel --last ##check the kernel installation date and time
+subscription-manager status ## check the subsription status
+subscription-manager list ##check the subscription list
+yum repolist ## lsit the repo
+yum list available ## check the available updates
+yum updateinfo summary ##  burada kac tane hangi alanda hangi derecede updates var onun bigisi- 3 crtical security notices etc..
+yum list kernel ##
+
+
+
+Step2
+ifconfig ##ip bilgisi vesaire
+df -Hk ##filesystem hakkinda bilgi verir.
+netstat -nr
+cat /etc/fstab
+
+
+ipmlementation part
+Step 3
+yum update  ##baya gir update yapiyor. burda patch bitiyor.
+uname -r ## versiyonu veriyor galiba
+init 6 ## reboot the system
+$
+
+
+after reboot, verify the kernel version
+Step 4
+rmp -qa kernel
+uname -r
+yum updateinfo summary
+
+
+### https://www.youtube.com/watch?v=nKlbF7aSq7Y
+
+Types of Patches
+1. Crtical updates
+2. Security updates
+3. Bug fixes
+4. Enhancements
+5. OS updates
+
+
+## https://www.youtube.com/watch?v=OJa0WsB_FJk
+PATCHING
+patches are fixes.
+in vulnaribility management program
+
+
+who makes patches -
+1. vendors, 2. application vendors slack zoom gibi kendileri yapar, 3. netwrok equipment vendors
+
+###  https://www.youtube.com/watch?v=8QzOmAlUCMs
+
+1.33 de kaldim

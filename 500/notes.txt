@@ -88,3 +88,36 @@ Martin Würflein 10/04/2023 11:08 • Password for the selenium-grid: "Doljey-20
 When the user enters the code "45 67 89" and clicks submit
 
 10 dan 15 e kadar doljey tasklari ayapabilrisin 14 15 biraz zor kubernetese birkabilrisin
+
+
+
+13.10 checkpoint
+
+
+13 . task da
+master a gitti jenkins da open blue ocean
+master a gecti
+ sonra yeni branch -- git checkout -b doljey13- tarianin28
+pus etti branchi
+jenkinsfile undex in altinda
+lijne 21 node 29 stage
+65 stage
+104 u aldi  116 ya yapistirdi sage icine  taskatan aldigi kelime yi yapsitirdi ESLint check deedi
+sonra 77 mavene gitti 77 86 arasu
+118 de catch error sildi
+80 i kopyalasi 119 a cacth eror altina 119 un sonuna run eslintit ouptput yazsis
+buranin ekrani aldim
+
+121 e kelede  ekrani aldim
+package.json 128 de eslint output a bakti
+git add commit push ekrai^ni aldim
+
+eslint warningse gitti
+
+
+
+
+
+16.10.2023
+touchpoint 1
+
