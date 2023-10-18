@@ -88,8 +88,7 @@ Martin Würflein 10/04/2023 11:08 • Password for the selenium-grid: "Doljey-20
 When the user enters the code "45 67 89" and clicks submit
 
 10 dan 15 e kadar doljey tasklari ayapabilrisin 14 15 biraz zor kubernetese birkabilrisin
-<<<<<<< Updated upstream
-=======
+
 
 
 
@@ -138,4 +137,5 @@ https://www.youtube.com/watch?v=eGz9DS-aIeY
 ilk task
 doljey- 20 - iamge star
 
->>>>>>> Stashed changes
+
+sudo docker image pull openjdk:11.0.10-jre
