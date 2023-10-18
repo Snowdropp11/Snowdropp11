@@ -1,0 +1,52 @@
+### https://www.youtube.com/watch?v=0FwOcZNjjQA
+
+AD - active directory. provide authentication user and groups managements.
+
+LDAP- so secure. it is used to access and manage the services.
+LDAP is a protocol to use AD. LDAP database gider oradan bilgi alir.
+
+What is LDAP?
+LDAP, the Lightweight Directory Access Protocol, is a mature, flexible, and well supported standards-based mechanism for interacting with directory servers. It’s often used for authentication and storing information about users, groups, and applications, but an LDAP directory server is a fairly general-purpose data store and can be used in a wide variety of applications
+
+How Does LDAP work?
+In short, LDAP specifies a method of directory storage that allows for adding, deleting, and modifying records, and it enables the search of those records to facilitate both authentication and authorization of users to resources.
+
+LDAP’s three main functions are:
+
+Update: This includes adding, deleting, or modifying directory information.
+
+Query: This includes searching and comparing directory information.
+
+Authenticate: The main authentication functions include binding and unbinding; a third function, abandon, can be used to stop a server from completing an operation
+
+
+LDAP Directory Information Tree
+LDAP organizes information in a hierarchical tree structure, referred to as a directory information tree (DIT). The LDAP DIT can vary based on the software or directory service you use; however, LDAP directories generally follow this tree structure, where entries without subordinates (users, for example) are leaves, and the root is the overarching entity that encompasses all the information within the directory.
+
+LDAP Authentication and Authorization
+The LDAP protocol both authenticates and authorizes users to their resources. The protocol authenticates users with a bind operation that allows the user to communicate with an LDAP directory, then authorizes the authenticated user to the resources they need if their input login information matches what’s listed for them in the database.
+
+1.What Is LDAP Authentication ?
+LDAP authentication relies on a client/server bind operation, which allows the LDAP-ready client, referred to as the directory user agent (DUA), and the directory server, referred to as the directory system agent (DSA), to communicate within a secure, encrypted session.
+
+When authenticating against an LDAP server in an attempt to gain access to the database, the user is prompted to provide their username and password.
+
+If the values the user inputs into the client matches what is found in the LDAP database, the user is granted access by the LDAP server to whatever the IT resource may be.
+
+2. What Is LDAP Authorization ?
+Once a user is successfully authenticated, they need to be authorized to the resource(s) requested. While different LDAP instances may structure and encode this slightly differently, this is essentially accomplished by assigning permissions with groups and roles in the directory.
+
+
+
+1- root
+2- Domain component
+    2.1. user 2.2. group
+
+o- organization
+ou- organization unit
+cn - common name
+
+
+ authenti¨types
+ 1- Simple
+ 2- SASL
