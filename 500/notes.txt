@@ -139,3 +139,7 @@ doljey- 20 - iamge star
 
 
 sudo docker image pull openjdk:11.0.10-jre
+
+
+###  NOTE : Exit codes are used by container engines, when a container terminates, to report why it was terminated.
+### If you are a Kubernetes user, container failures are one of the most common causes of pod exceptions, and understanding container exit codes can help you get to the root cause of pod failures when troubleshooting.

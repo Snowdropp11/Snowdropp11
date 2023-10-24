@@ -1,0 +1,79 @@
+Agile
+
+it is a iterative approach to the project management and software development to supply the rewquirents of the custumers better.
+it breaks the big part into the small pieces.
+
+1. frequesnt delivery
+2. Phase-to-phase feedback
+3. changes
+4. minumumn time
+
+nachteilen
+1- veniger documant
+2- difficult to maintain
+
+
+6 gunluk kurs
+
+- 1. Gun
+CICD kursuna benziyor.
+
+agile framework
+
+- teknoloji degistikce, kenidini yenilemesin.
+
+- kosten I shape - different experience ( beginner, expert, pro vesaire) . T E shape ise farkli alanlarda expert olmaya calsima .
+
+- quality - musteriye yakin olma, yeni fikirlere acik olma , transparent, rewiev yapma.
+
+- risk management -  kucuk degisimler ile yap.
+
+conways law -  framework
+
+mindsat - how you thinh, bhave, go with the new changes. allow yourself to do sth. adapt yourself. insanlar ve ilsikileri daha onemli klasik olana gore. musteri ile komusmak onemli. delivery benefit degilse durmalsiin.
+
+
+do one thing and do it very well. ne is yapacagina yogunlasmalsiin. amaca yonelik olmayanlara yogunlasmak iyi degil.
+
+
+PO custumer ile konusmali ve ihtiyaclari iyi belirlemeli. ona gore elemnlari yonlendrmeli, ve anlamaliarini saaglamali nusteri ihtiylari yonuyle.
+
+
+
+
+team - 5 10 kisi - sprints can be 2 3 weeks. agreement ettigin seyleri bu sured eyaparsin.
+
+PO - this is more important for me ve team bunlara yogunlasir.
+
+Scrum master - teama malzeme ve bilgi destegi verir. grubu takim yapmak icin ugrasir. birlikte mutlu olamalarini saglar takimin. bir konu uzayinca o konu ile ilgili yeni toplanti mi yapilacak yada konuyu uzatmadan konuya donmeyi saglar. meetings daliy retro gibi  toplantilari organize eder.
+
+Sprint - you plan 2 4 weeks. rewiw^w yaparsin what you have done demek yani - retro en sonda genele olrak degerlendirme bu sprinti what should be inmproved ne iyidi ne kotuydu ne mutlu etti ne musuz etti  -
+
+BAcklog - PO backlog  a tasklari belirler. team buradan secer. you write story in the backlog. WAs nicht WIE - tasklara komlexlik derecesi verilir. derecene gore taskin zorunluguna gore puan verirsin. tsort size gibi. python application mesala. soru isareti verirsek bir fikrim yok demek- XXXL mesala, Xl, S, M gibi, en yuksek ve ey az veren konusurr ortak noktada bulunana kadar devam eder.
+
+
+
+
+2. GUN
+
+what is the commen goal in this team.. agile takiminin en onemli belirlemesi gereken sey. what are we going to do ? you dont define the roles but functions.
+
+meetinglerde ise ne yaptin nasil gidiyor vesaire.
+retro da what is good what is bad. ...
+
+plan -- what will we do in the next sprint-
+
+refinement - PO says i wnat to do a web page like this. they go deeper negotioate .. ama tam anlamadim. the goal everybody understand and estimate the story.
+
+sirasi ile soyle
+
+1. refinement
+2. planinig
+3. review
+4. retro
+
+
+
+
+
+
