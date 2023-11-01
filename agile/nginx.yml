@@ -1,3 +1,9 @@
 ---
 ingress:
   enabled: true
+
+  # service.ports.http       kubectl run postgresql-postgresql-client --rm --tty -i --restart='Never' --namespace default --image bitnami/postgresql --env=PGPASSWORD=MlpxGnPcbT --command -- psql --host postgres-postgresql -U postgres
+
+service:
+  ports:
+    http: 8888

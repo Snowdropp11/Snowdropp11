@@ -143,3 +143,34 @@ sudo docker image pull openjdk:11.0.10-jre
 
 ###  NOTE : Exit codes are used by container engines, when a container terminates, to report why it was terminated.
 ### If you are a Kubernetes user, container failures are one of the most common causes of pod exceptions, and understanding container exit codes can help you get to the root cause of pod failures when troubleshooting.
+
+
+
+27.10.2023
+checkpoint
+
+anketi yap.
+
+task 24
+training main branch a gitti
+git pull dedi
+cd dedi main docker direktorye gitti tmentiproddockercompose.yml file bakti
+kutut daki mkomutulari girdi 3 tane
+link calsimiyor sonra gelen
+down ile durdurdu sonra gelen komutlari
+
+taskin branch olusturudu bunu yapmadi am aorada yaziyor galiba
+ yml dosyaya gitti environment altina ekledi tasktaki 2 tane olani ekran aldim
+jenkine bakti output a
+yam daki tmenti ai:500  ekledi ekran aldim $
+up komutu yeniden calsitirdi yaml file icin
+loglari bekledi -f ile
+CD SRC/MAIN/DOCKER A girdi
+LS -LA yapti
+ps yapti docker dosyali yml
+traininxxx urle gitti
+sonra birseyler yapti ekran var
+wsc actigim yerde 2. sutunu acti terminalde menti yazinca  admin sifre girdi  create or edit a event a tikladi feeling how do you feel 12345 gibi bosluklair doldurdu new entry isim ve asagi kutuya i feel good dedi new entry baska siim kutuya basaka cevap yazdi
+submet dedi
+git commit ile push ile bitir
+
