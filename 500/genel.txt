@@ -14,3 +14,27 @@ Nexus can be used additionally, as it does not support Single-Sign-On, you have 
 Before you setting up your VSC (Visual Studio Code) familiarise yourself with the rancher 2 tool:
 
 
+### Kubernetes
+for managing contaniarized workloads and services that faciltiies both declerative configuration adn automation.
+
+namespaces: size ayrilmis sanal bir alan- resource u kisitli. icierisinde cesitli objectler var.
+
+objects:
+- pod. smallest deployable units. scalable.
+- deployment- i want to deploy T-menti app with 5 pods ornegin.
+- PVC persistent volume claim - you spesify size. a request of desired state. you mount into your deployment-
+- decrets - for https certificate icin, image indiriken repositoriden kullaniriz. variables a baglanir.
+- services - a way how we expose an apllication port. cluster ip service bir ornek. eger expose traffic to the inetrnet we first define service four our k8 netwrok. bind this port and expose it.
+- ingress- sadece http load balancer traffic icn -
+
+# Rancher- centrally manages clusters in any public cloud or K8 environment. UI based management of the cluster - integrate storage solutions - further netwroking solutions as LoadBalancer, Software defined networking integration or security policies.
+
+
+kubectl - CLI let you control with k8 ccluster.
+
+
+- Helm : K8 packet manager. allows you package k8 applications (Helm Chart) -
+- Helm Chart is a collection of pre-confirigured K8 resources.
+
+
+31 de kaldim dakika

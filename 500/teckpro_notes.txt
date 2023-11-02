@@ -1,0 +1,36 @@
+buyuk projeleri kucuk parcalara ayiriyoruz mickroservicse lerde. kodlar parcalara ayrilip farkli dillerde yazilabiliyor. yonetilebilri oluyorlar. limitli.
+
+decelrative - do it. 4 katli asansirlu 3+1 bir ev sitiyorum
+
+
+imperative- asamalaritek tek ... arsa bul, kolonlari soyle yap. duvarlari soyle olsun, odalar soyle olsun tek tek anlatiyor.
+
+
+nod: bir bilgisayar. instance yani. EC2 bir diger deyisle.
+master- control plane diyoruz.
+cluster worker ve master in oldugu yer.
+
+master daki araclar--
+
+kupeapiserver- herseyi yapan bu. manager. komutlari veriyor. buradan clustera giris. izin veriyor yada vermiyor.
+etcd - cluster ile ilgili butun bilgiler burada. databasi gibi. key value seklinde datalari tutuyor.
+control mamnager- hangi uygulamaya ayaga klakmali, hangi nod kactane ayaga kaldirsin bunlari yoneten yer.
+- yukaridakilerin herbiri bir container.
+
+
+workerlarda araclar --
+pod- containerlar podlarn icinde calsiir. herbiri ip si var.
+sidecar- loglari tutar monitoring ve loglari tutar .
+contaienr runtime-
+kubelet- ajan --- node icindeki isleri bu yapiyor. controler dediklerini yapiyor. applicaton alr sadece node1 de calsisin. responsible for lifecycle of pods. understand yaml container manifest.
+kubectl - komut cli . rancher ise gui uzerinden yonetir. kubectl terminalden komutlar ile yapiyor.
+
+
+2. ders
+
+namespace -k endine ozel vurtual alan. default var. kendinde olusturabilrisin.
+
+replica set- bir podun kopyalari. deployment ta sayisini belirliyoruz.yaml file in icersinde yani. deployment bir pod gibi nesne burada.
+
+
+
