@@ -1,0 +1,11 @@
+
+1 .Day
+
+github linki verielcek.
+
+Ansible -
+
+otomation tool olarak kullanabiliriz
+connect different silos.
+simple- powerful. agentless
+sisco switch nasil calsitigini bilmemize gerek yok.
