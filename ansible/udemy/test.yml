@@ -1,0 +1,8 @@
+---
+- name: Output facts within a playbook
+  hosts: all
+  tasks:
+    - name: Prints Ansible facts
+      debug:
+        msg: The defautl IPv4 addres of {{ ansible_fqdn }} is {{ ansible_default_ipv4.address }}
+  # {{ ansible_fqdn }}: Bu ifade, hedef sunucunun tam kalifikasyonlu alan adını (Fully Qualified Domain Name - FQDN) temsil eder. Yani, hedef sunucunun adını ve etki alanını içerir.

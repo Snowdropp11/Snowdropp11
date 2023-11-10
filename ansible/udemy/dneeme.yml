@@ -1,0 +1,14 @@
+---
+name: "yusuf"
+age: 39
+gender: "male"
+desc: null
+hobbies:
+  - futbool
+  - basketball
+  - movie
+hobbies: ["asda", "sdfsdf", "sdgdsgd0"]
+friends:
+  -name: "yusuf"
+   age: 39
+  -{name: "ilhan",age:30}

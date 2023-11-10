@@ -1,0 +1,26 @@
+---
+- name: Install and start apache
+  hosts: all # list of target system
+  remote_user: root
+  become: true
+  gather_facts: no
+
+  tasks:
+    - name: Ensure the httpd package is installed
+      ansible.builtin.package:
+        name: httpd
+        state: present
+
+    - name: Create the index.html file
+      ansible.builtin.template: # template uses ginga
+        src: ./index.html
+        dest: /var/www/html
+
+    - name: Start the httpd service if neded
+      ansible.builtin.service:
+        name: httpd
+        state: started
+# vars:
+#   mysqldb: "testdb"  variable boyle verilebilir. {{ appname }} boyle de verilebiir
+# labels:
+#      app: "{{ appname }}" boylede olabilir

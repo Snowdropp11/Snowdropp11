@@ -1,0 +1,83 @@
+redhat
+
+[user@host ~]$  			[root@host ~]#
+
+The command is the name of the program to run. It might be followed by one or more options, which adjust the behavior of the command or what it does. Options normally start with one or two dashes (-a or --all, for example) to distinguish them from arguments. Commands might also be followed by one or more arguments, which often indicate a target that the command should operate on
+For example, in the usermod -L user01 string, usermod is the command, -L is the option, and user01 is the argument
+
+ssh
+An alternative way to authenticate to a remote machine without entering a password is through public key authentication
+
+The ssh command -i option is used to specify the user's private key file, which is mylab.pem. The matching public key is already set up as an authorized key in the remoteuser account.
+
+[user@host ~]$ ssh -i mylab.pem remoteuser@remotehost  you can use the chmod 600 mylab.pem command to ensure that only the owner can read the file
+
+
+Shortcut	Description
+Ctrl+A	Jump to the beginning of the command line.
+Ctrl+E	Jump to the end of the command line.
+Ctrl+U	Clear from the cursor to the beginning of the command line.
+Ctrl+K	Clear from the cursor to the end of the command line.
+Ctrl+LeftArrow	Jump to the beginning of the previous word on the command line.
+Ctrl+RightArrow	Jump to the end of the next word on the command line.
+Ctrl+R	Search the history list of commands for a pattern.
+55TURNK3y
+
+date +%R saati gosterir
+date +%x tarihi gosterir
+
+The less command displays one page of a file at a time The head and tail commands display the beginning and the end of a file-n option to specify a different number of lines.The wc command counts lines, words, and characters in a file.-l, -w, or -c options to display only the given number of lines, words, or characters,  line words and chareCTER sira ile gelir.
+
+
+
+To write one command in more than one line, use a backslash character (\),
+
+The !number command expands from history command
+
+Moving the Cursor:
+
+Ctrl + A: Move to the beginning of the line.
+Ctrl + E: Move to the end of the line.
+Ctrl + U: Delete from the cursor to the beginning of the line.
+Ctrl + K: Delete from the cursor to the end of the line.
+Deleting and Cutting:
+
+Ctrl + W: Delete the word before the cursor.
+Ctrl + Y: Paste the last deleted text.
+Manipulating Words:
+
+Alt + Backspace or Ctrl + W: Delete the word before the cursor.
+Alt + D: Delete the word after the cursor.
+History Navigation:
+
+Ctrl + R: Search the command history interactively.
+!!: Repeat the last command.
+!n: Repeat the nth command in the history.
+Other Handy Commands:
+
+Ctrl + C: Cancel the current command.
+Ctrl + L: Clear the screen.
+Ctrl + D: Exit the shell (or send an EOF if the line is empty).
+!! en son girielen komutu tekrar yazar
+
+/dev	Special device files that the system uses to access hardware.
+/etc	System-specific configuration files.
+/home	Home directory, where regular users store their data and configuration files.
+/root	Home directory for the administrative superuser, root.
+/run	Runtime data for processes that started since the last boot. This data includes process ID files and lock files. The contents of this directory are re-created on reboot. This directory consolidates the /var/run and /var/lock directories from earlier versions of Red Hat Enterprise Linux.
+/tmp	A world-writable space for temporary files. Files that are not accessed, changed, or modified for 10 days are deleted from this directory automatically. The /var/tmp directory is also a temporary directory, in which files that are not accessed, changed, or modified in more than 30 days are deleted automatically.
+/usr	Installed software, shared libraries, including files, and read-only program data. Significant subdirectories in the /usr directory include the following commands:
+/usr/bin: User commands
+
+/usr/sbin: System administration commands
+
+/usr/local: Locally customized software
+
+/var	System-specific variable data should persist between boots. Files that dynamically change, such as databases, cache directories, log files, printer-spooled documents, and website content, might be found under /var.
+
+The touch command updates the time stamp of a file to the current date and time without otherwise modifying it.
+
+cd - once ki komut sadece cd home a gider
+
+burada kaldim
+https://rol.redhat.com/rol/app/courses/rh124-9.0/pages/ch03s05

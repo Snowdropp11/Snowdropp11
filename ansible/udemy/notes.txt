@@ -1,0 +1,25 @@
+
+2. Kurs
+
+ansible all -m shell -a 'date'
+
+
+https://www.udemy.com/course/ansible-for-the-absolute-beginner-devops/learn/lecture/18258732#overview
+
+
+
+
+
+
+1. Kurs
+qbwible basic
+
+ansible -m setup localhost
+
+
+
+bitti
+
+https://www.udemy.com/course/ansible-basics-an-automation-technical-overview/learn/lecture/28777102#overview
+
+

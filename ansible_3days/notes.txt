@@ -9,3 +9,23 @@ otomation tool olarak kullanabiliriz
 connect different silos.
 simple- powerful. agentless
 sisco switch nasil calsitigini bilmemize gerek yok.
+
+# Ansible playbook
+
+modules --- ¨
+plugins extra bits
+roles - reusable automation actions
+
+python
+
+inventory- list of nodes
+
+notify: burada yazn neresi ise orayi trigger eder. bir degisiklik olursa sistemde
+
+handlers:
+
+
+
+2. GUN
+
+monaco editor
