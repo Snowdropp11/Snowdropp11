@@ -174,3 +174,11 @@ wsc actigim yerde 2. sutunu acti terminalde menti yazinca  admin sifre girdi  cr
 submet dedi
 git commit ile push ile bitir
 
+
+
+
+10.11.2023
+Container Orchestration - Checkpoint Kubernetes
+task 33 basladi
+helmcd values file degistirdi resimde var
+hel nsrtla ko mutunu girsi note un altinda kutudfaki
