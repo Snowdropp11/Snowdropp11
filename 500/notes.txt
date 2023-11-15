@@ -182,3 +182,18 @@ Container Orchestration - Checkpoint Kubernetes
 task 33 basladi
 helmcd values file degistirdi resimde var
 hel nsrtla ko mutunu girsi note un altinda kutudfaki
+
+
+15.11.2023
+terraform live session
+
+
+
+
+terraform
+automate infrastructure on any cloud.
+declarative way_ we ddefine a state, terraform tries to reach there
+I want to scale up my Kubernetes Cluster up to a third Node, and with that install a second T-Menti App.
+
+verify plan apply
+

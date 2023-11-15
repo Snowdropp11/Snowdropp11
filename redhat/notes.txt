@@ -214,5 +214,196 @@ To unset an alias, use the unalias command:
 
 Manage Local Users and Groups
 
+.bashrc alias eklersek kalici hale gelir.
 
-https://rol.redhat.com/rol/app/courses/rh124-9.0/pages/ch06
+
+
+ORTAM DEGISKENLERI
+buyuk harf olur ve $ olur.  sayi ile baslayamanz. printenv komutu ile gorulur.unset ile sileriz. ama dosya ya eklemedi isek kapatinca gider zaten.
+.bashrc dosyasina eklemek gerek. basina export eklersek global olur
+lokal degisken ile printenv komutu ile calismaz. global ler calsiir. echo $degisken yada printenv degisken $ isareti olamdan olur unset yada export -n ile silinebilir.
+
+
+
+
+
+ USER GROPUS
+The superuser account administers the system. The superuser name is root and the account has a UID of 0. The superuser has full system access.
+The system user accounts are used by processes that provide supporting services. These processes, or daemons, usually do not need to run as the superuser. They are assigned non-privileged accounts to secure their files and other resources from each other and from regular users on the system. Users do not interactively log in with a system user account.
+Most users have regular user accounts for their day-to-day work. Like system users, regular users have limited access to the system.
+
+Use the id command to show information about the currently logged-in user:
+ip user buda o kullanici hakkinda bilgi verir
+
+The /etc/sudoers file is the main configuration file for the sudo command
+
+UID 0 : The superuser (root) account UID.
+
+UID 1-200 : System account UIDs that are statically assigned to system processes.
+
+UID 201-999 : UIDs that are assigned to system processes that do not own files on this system. Software that requires an unprivileged UID is dynamically assigned a UID from this available pool.
+
+UID 1000+ : The UID range to assign to regular, unprivileged users.
+
+usermod -c "Operator Two" operator2    Sonuç olarak, bu komut, operator2 adlı kullanıcının tam adını "Operator Two" olarak değiştirir. Kullanıcının tam adı genellikle sadece bilgilendirme amacıyla kullanılır ve sistemdeki birçok yerde görülebilir.
+
+
+
+The groupadd command -g option specifies a GID for the group to use.
+[root@host ~]# groupadd -g 10000 group01
+The groupmod command changes the properties of an existing group. The groupmod command -n option specifies a new name for the group.
+[root@host ~]# groupmod -n group0022 group02
+
+
+Notice that the group name updates to group0022 from group02. The groupmod command -g option specifies a new GID.
+[root@host ~]# groupmod -g 20000 group0022
+
+[root@host ~]# groupdel group0022
+
+A user's primary group is the group that is viewed on the user's account in the /etc/passwd file
+
+
+Create the operators supplementary group with a GID of 30000.
+[root@servera ~]# groupadd -g 30000 operators
+
+
+Create the admin supplementary group without specifying a GID.
+[root@servera ~]# groupadd admin
+
+Add the operator1, operator2, and operator3 users to the operators group.
+[root@servera ~]# usermod -aG operators operator1
+[root@servera ~]# usermod -aG operators operator2
+[root@servera ~]# usermod -aG operators operator3
+
+Create the /etc/sudoers.d/admin file so that the members of the admin group have full administrative privileges.
+[root@servera ~]# echo "%admin ALL=(ALL) ALL" >> /etc/sudoers.d/admin
+
+
+Create the consultants group with a GID of 35000.
+[root@serverb ~]# groupadd -g 35000 consultants
+
+Create the consultant1, consultant2, and consultant3 users with the consultants group as their supplementary group.
+[root@serverb ~]# useradd -G consultants consultant1
+[root@serverb ~]# useradd -G consultants consultant2
+[root@serverb ~]# useradd -G consultants consultant3
+
+Set the account expiry date of the consultant1, consultant2, and consultant3 accounts to the same value as determined in the preceding step. For example:
+[root@serverb ~]# chage -E 2022-06-08 consultant1
+
+Change the password policy for the consultant2 account to require a new password every 15 days.
+[root@serverb ~]# chage -M 15 consultant2
+
+
+Chapter 7. Control Access to Files
+
+Permission	Effect on files	Effect on directories
+r (read)	File contents can be read.	        Contents of the directory (the file names) can be listed.
+w (write)	File contents can be changed.	        Any file in the directory can be created or deleted.
+x (execute)	Files can be executed as commands.	The directory can become the current working directory. You can run the cd command to it, but it also requires read permission to list files there.
+
+Anyone who owns or has write permissions to a directory can remove files on it, regardless of the ownership or permissions on the file itself. You can override this behavior by using the sticky bit permission, to be discussed later in this chapter.
+
+Use the ls command -d option to show detailed information about a directory itself, and not its contents.
+[user@host ~]$ ls -ld /home
+drwxr-xr-x. 5 root root 4096 Feb 31 22:00 /home
+
+The first character of the long listing is the file type, and is interpreted as follows:
+
+- is a regular file.
+d is a directory.
+l is a symbolic link.
+c is a character device file.
+b is a block device file.
+p is a named pipe file.
+s is a local socket file.
+
+r	read	Read access to the file. Listing access to the directory.
+w	write	Write permissions to the file or directory.
+x	execute	Execute permissions to the file. Allows entering the directory, and accessing files and subdirectories inside the directory.
+X	special execute	Execute permissions to a directory, or execute permissions to a file if at least one of the execute bits is set.
+
+[user@host ~]$ chmod go-rw document.pdf
+
+Add execute permission for everyone on the myscript.sh file:
+[user@host ~]$ chmod a+x myscript.sh
+
+[root@host opt]# chmod -R g+rwX demodir
+sets read and write access on the demodir directory and all its children for their group owner, but applies group execute permissions only to directories and files where execute permission is already set for user, group, or other.
+
+To add read permissions for this access level, add 4.
+To add write permissions, add 2.
+To add execute permissions, add 1.
+[user@host ~]$ chmod 644 sample.txt
+
+to grant ownership of the app.conf file to the student user,
+[root@host ~]# chown student app.conf
+
+For example, the following command changes the group ownership of the Pictures directory to admins:
+[root@host ~]# chown :admins Pictures
+
+to change the ownership of the Pictures directory to the visitor user and the group to guests, use the following command:
+[root@host ~]# chown visitor:guests Pictures
+
+
+Permission	Effect on files	Effect on directories
+u+s (suid)	File executes as the user that owns the file, not as the user that ran the file.	No effect.
+g+s (sgid)	File executes as the group that owns the file.	Files that are created in the directory have a group owner to match the group owner of the directory.
+o+t (sticky)	No effect.	Users with write access to the directory can remove only files that they own; they cannot remove or force saves to files that other users own.
+
+Add the setgid bit on the example directory by using the symbolic method:
+[user@host ~]# chmod g+s example
+
+Remove the setuid bit on the example directory by using the symbolic method:
+[user@host ~]# chmod u-s example
+
+
+
+
+Chapter 8. Monitor and Manage Linux Processes
+
+ps aux   The common ps command aux option displays all processes including processes without a controlling terminal.
+Listing Processes
+The ps command is used for listing detailed information for current processes.
+
+User identification (UID), which determines process privileges
+
+Unique process identification (PID)
+
+Amount of used CPU and elapsed real time
+
+Amount of allocated memory
+
+The process stdout location, which is known as the controlling terminal
+
+The current process state
+
+A signal is a software interrupt that is delivered to a process. Signals report events to an executing program. Events that generate a signal can be an error, an external event (an I/O request or an expired timer), or by the explicit use of a signal-sending command or keyboard sequence.
+
+You can use the kill command -l option to list the names and numbers of all available signals.
+[user@host ~]$ kill -l
+ 1) SIGHUP      2) SIGINT      3) SIGQUIT     4) SIGILL      5) SIGTRAP
+ 6) SIGABRT     7) SIGBUS      8) SIGFPE      9) SIGKILL    10) SIGUSR1
+11) SIGSEGV    12) SIGUSR2    13) SIGPIPE    14) SIGALRM    15) SIGTERM
+16) SIGSTKFLT  17) SIGCHLD    18) SIGCONT    19) SIGSTOP    20) SIGTSTP
+[user@host ~]$ kill -9 5199
+
+[user@host ~]$ kill -SIGTERM 5205
+user   5986  0.0  0.0 221860  1048 pts/1  S+  16:45  0:00 grep --color=auto job [3]+  Terminated              control job3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Red Hat System Administration II (RH134) course. bu kursa bi bak faydali olabilir selinux varmis.
+
+https://rol.redhat.com/rol/app/courses/rh124-9.0/pages/ch08s05
