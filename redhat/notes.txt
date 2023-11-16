@@ -393,7 +393,179 @@ user   5986  0.0  0.0 221860  1048 pts/1  S+  16:45  0:00 grep --color=auto job 
 
 
 
+Set the group permission for the /home/techdocs directory. Configure setgid; read, write, and execute permissions for the owner and group; and no permissions for others.
+[root@serverb ~]# chmod 2770 /home/techdocs
 
+Monitor Process Activity
+
+Load average is a measurement that the Linux kernel provides, to represent the perceived system load for a period of time. It can be used as a rough gauge of how many system resource requests are pending, to determine whether system load increases or decreases.
+The uptime command is one way to display the current load average.prints the current time, how long the machine has been up, how many user sessions are running, and the current load average.
+[user@host ~]$ uptime
+ 15:29:03 up 14 min,  2 users,  load average: 2.92, 4.48, 5.20
+
+
+Use the lscpu command to determine the number of CPUs on a system.
+[user@host ~]$ lscpu
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              4
+On-line CPU(s) list: 0-3
+Thread(s) per core:  2
+Core(s) per socket:  2
+Socket(s):           1
+NUMA node(s):        1
+...output omitted...
+
+
+The top command displays a dynamic view of the system's processes and a summary header followed by a process or thread listthe top command continuously refreshes at a configurable interval and provides column reordering, sorting, and highlighting
+
+
+ 9- Control Services and Daemons
+The systemd daemon manages the startup process for Linux, including service startup and service management in general. The systemd daemon activates system resources, server daemons, and other processes, both at boot time and on a running system
+
+Daemons are processes that either wait or run in the background, to perform various tasks. Generally, daemons start automatically at boot time and continue to run until shutdown or until you manually stop them. By convention, daemon names end with d.
+
+Use the systemctl command to explore the system's current state. For example, the following command lists and paginates all currently loaded service units.
+
+[root@host ~]# systemctl list-units --type=service
+UNIT                  LOAD    ACTIVE  SUB      DESCRIPTION
+atd.service           loaded  active  running  Job spooling tools
+auditd.service        loaded  active  running  Security Auditing Service
+chronyd.service       loaded  active  running  NTP client/server
+crond.service         loaded  active  running  Command Scheduler
+dbus.service          loaded  active  running  D-Bus System Message Bus
+...output omitted...
+
+[root@host ~]# systemctl is-active sshd.service
+active
+
+[root@host ~]# systemctl is-enabled sshd.service
+enabled
+
+[root@host ~]# systemctl is-failed sshd.service
+active
+
+List all the installed service units on the servera machine.
+[student@servera ~]$ systemctl list-units --type=service
+
+Display the status of the chronyd service. Note the process ID of any active daemon.
+[student@servera ~]$ systemctl status chronyd
+
+Determine whether the sshd service is enabled to start at system boot.
+[student@servera ~]$ systemctl is-enabled sshd
+enabled
+
+Verify that the psacct service is running.
+[root@serverb ~]# systemctl is-active psacct
+active
+
+Summary
+The systemd utility provides a method for activating system resources, server daemons, and other processes, both at boot time and on a running system.
+Use the systemctl utility to start, stop, reload, enable, and disable services.
+Use the systemd utility to manage service units, socket units, and path units.
+Use the systemctl status command to determine the status of system daemons and network services that the systemd utility started.
+The systemctl list-dependencies command lists all service units that a specific service unit depends on.
+The systemd utility can mask a service unit so that it does not run, even to satisfy dependencies.
+
+
+Chapter 10. Configure and Secure SSH
+
+When a user runs the ssh command for connecting to an SSH server, the command checks for a copy of the server's public key in its local known hosts file. The key might be preconfigured in the /etc/ssh/ssh_known_hosts file, or the user might have the ~/.ssh/known_hosts file that contains the key in their home directory.
+
+
+Display the users that are currently logged in to the serverb machine. The student user is logged in to the system from the host with an IP address of 172.25.250.10, which is the servera machine in the classroom network.
+[student@serverb ~]$ w --from
+03:39:04 up 16 min,  1 user,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+student  pts/0    172.25.250.10    20:40    1.00s  0.01s  0.00s w --from
+
+SSH Key-based Authentication
+One key is private and held only by you. The second key is your related public key, which is not secret. The private key acts as your authentication credential, and it must be stored securely. The public key is copied to your account on servers that you will remotely access, and verifies your use of your private key.
+
+The ssh-keygen command -f option specifies the files to save the keys in
+ssh-keygen -f .ssh/key-with-pass
+
+### Share the Public Key
+To configure your remote account for access, copy your public key to the remote system. The ssh-copy-id command copies the public key of the SSH key pair to the remote system. You can specify a specific public key with the ssh-copy-id command, or use the default ~/.ssh/id_rsa.pub file.
+ssh-copy-id -i .ssh/key-with-pass.pub user@remotehost
+
+[user@host ~]$ cat ~/.ssh/config
+host servera
+     HostName                      servera.example.com
+     User                          usera
+     IdentityFile                  ~/.ssh/id_rsa_servera
+boyle bir sey eklenebilir.
+
+ssh -v operator1@servera hostname   buda ayrintili olarak verir baglanirken steo step ekrana basar
+
+Generate another set of SSH keys with passphrase-protection. Save the key as /home/operator1/.ssh/key2. Use redhatpass as the passphrase of the private key.
+[operator1@serverb ~]$ ssh-keygen -f .ssh/key2
+
+ssh in key mizi yonetmesini istersek
+ssh-agent
+eval $(ssh-agent)
+ssh-add private_key_path bu 3 komutu sira ile girersek ssh key olusturuken sifre olusturmus isek bu sifreyi yonetir artik .
+yani bir key manager gorevi gorurr
+
+Chapter 11. Manage Networking
+Describe Network Interface Names
+Each network port on a system has a name, which you use to configure and identify it.
+Earlier versions of Red Hat Enterprise Linux used names such as eth0, eth1, and eth2 for each network interface. The eth0 interface name was the first network port that the operating system detected; eth1 was the second interface, and so on
+
+Network interface names start with the type of interface:
+Ethernet interfaces begin with en ifconfig
+Bu komut, mevcut ağ arayüzlerinin ayrıntılarını listeler. Çıktıda, her bir arayüzün adı (eth0, eth1, vb.), IP adresi, MAC adresi ve diğer ağ bağlantı bilgileri görüntülenir.
+WLAN interfaces begin with wl
+WWAN interfaces begin with ww
+
+IPv4 Addresses
+An IPv4 address is a 32-bit number, which is expressed as four 8-bit octets in a decimal format that ranges in value from 0 to 255, separated by single dots. The address is divided into two parts: the network prefix and the host number.The network prefix identifies a unique physical or virtual subnet. The host number identifies a specific host on the subnet. All hosts on the same subnet have the same network prefix and can talk to each other directly without a router. A network gateway connects different networks, and a network router commonly operates as the gateway for a subnet.
+
+A subnet is a segment of a larger network, and the use of the term depends on the context. An IP network is partitioned into multiple, smaller network segments. Typically, segment refers to the physical or virtual link layer, whereas subnet refers to the logical, network-layer addressing for the corresponding segment.
+
+netmask 255.255.0.0 ise ilk 2 netwrok son 2 host a ait.
+/24 demek ilk 24 network e ait demek
+
+
+[user@host ~]$ ip link show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:00:00:0a brd ff:ff:ff:ff:ff:ff
+3: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:00:00:1e brd ff:ff:ff:ff:ff:ff
+
+
+ip addr show ens3 bu ens3 un ip adresini verir bizw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://rol.redhat.com/rol/app/courses/rh124-9.0/pages/ch11s05
 
 
 
