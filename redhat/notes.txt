@@ -541,41 +541,135 @@ ip addr show ens3 bu ens3 un ip adresini verir bizw
 
 
 
+ hostnamectl status
+
+ Change the hostname.
+[root@servera ~]# hostname testname
+
+Reboot the system.
+[root@servera ~]# systemctl reboot
+
+The nmcli command-line tool configures network settings with the NetworkManager daemon.
+Starting in Red Hat Enterprise Linux 9, the default location for network configurations is the /﻿etc/NetworkManager/system-connections directory.
+The system's static hostname is stored in the /etc/hostname file.
+The hostnamectl command modifies or views the status of the system's hostname and related settings.
+
+rpm -qa : List all installed packages.
+
+rpm -q : List the currently installed package version.
+[user@host ~]$ rpm -q dnf
+
+rpm -qi : Get detailed package information.
+rpm -ql : List the files that the package installs.
+[user@host ~]$ rpm -ql dnf
+
+Use the rpm command to install an RPM package that you downloaded to your local directory.
+[root@host ~]# rpm -ivh podman-4.0.0-6.el9.x86_64.rpm
+
+View information for the rhcsa-script-1.0.0-1.noarch.rpm package.
+[student@servera ~]$ rpm -q -p rhcsa-script-1.0.0-1.noarch.rpm -i
+
+List files in the rhcsa-script-1.0.0-1.noarch.rpm package.
+
+[student@servera ~]$ rpm -q -p rhcsa-script-1.0.0-1.noarch.rpm -l
+/opt/rhcsa-script/mymotd
+
+Use the sudo rpm -ivh command to install the rhcsa-script-1.0.0-1.noarch.rpm RPM package.
+[student@servera ~]$ sudo rpm -ivh rhcsa-script-1.0.0-1.noarch.rpm
+
+Use the rpm command to verify that you correctly installed the package.
+[student@servera ~]$ rpm -q rhcsa-script
+
+dnf info httpd
+
+Task:	Command:
+List installed and available packages by name.	 dnf list [NAME-PATTERN]
+List installed and available groups.	         dnf group list
+Search for a package by keyword.	             dnf search KEYWORD
+Show details of a package.                       dnf info PACKAGENAME
+Install a package.	                             dnf install PACKAGENAME
+Install a package group.	                     dnf group install GROUPNAME
+Update all packages.	                         dnf update
+Remove a package.	                             dnf remove PACKAGENAME
+Display transaction history.	                 dnf history
+
+dnf module list : List the available modules with the module name, stream, profiles, and a summary.
+dnf module list module-name : List the module streams for a specific module and retrieve their status.
+
+
+dnf repolist all
+
+dnf repolist all
+
+
+Identify File Systems and Devices
+Objectives
+
+Storage Management Concepts
+Red Hat Enterprise Linux (RHEL) uses the Extents File System (XFS) as the default local file system. RHEL supports the Extended File System (ext4) file system for managing local file
+
+Access the contents of a file system by mounting it on an empty directory. This directory is called a mount point. When the directory is mounted, use the ls command to list its contents. Many file systems are automatically mounted when the system boots.
 
 
 
+Partitions are block devices in their own right. For example, on the first SATA-attached storage, the first partition is the /dev/sda1 disk. The second partition of the same storage is the /dev/sda2 disk. The third partition on the third SATA-attached storage device is the /dev/sdc3 disk,
+
+Logical Volumes
+Another way of organizing disks and partitions is with Logical Volume Management (LVM). With LVM, it is possible to aggregate block devices into a volume group.Disk space in the volume group is separated into logical volumes, which are the functional equivalent of a partition on a physical disk.
+The LVM system assigns names to volume groups and logical volumes on their creation. LVM creates a directory in the /dev directory that matches the group name, and creates a symbolic link within that new directory with the same name as the logical volume. That logical volume file is then available to be mounted. For example, when a myvg volume group and the mylv logical volume are present, the full path to the logical volume is the /dev/myvg/mylv file.
+
+Use the df command to display an overview of local and remote file-system devices, which includes the total disk space, used disk space, free disk space, and the percentage of the entire disk space.
+
+Use the du command for more detailed information about a specific directory tree space
+du /usr/share
+
+You can mount the file system in one of the following ways with the mount command:
+With the device file name in the /dev directory.
+With the UUID, a universally unique identifier of the device.
+
+Use the lsblk command to list the details of a specified block device or of all the available devices.
+
+the identified partition is 9.3 GB, then mount the /﻿dev/vda4 partition.
+Mount File System with the Partition Name
+The following example mounts the /dev/vda4 partition on the /mnt/data mount point.
+[root@host ~]# mount /dev/vda4 /mnt/data
+
+The lsblk -fp command lists the full path of the device, the UUIDs and mount points, and the partition's file-system type. The mount point is blank when the file system is not mounted.
+Mount the file system by the file-system UUID.
+[root@host ~]# mount UUID="efd314d0-b56e-45db-bbb3-3f32ae98f652" /mnt/data
+
+
+LOCATE command
+
+The locate command searches for files based on the name or path to the file. The command is fast, because it looks up this information from the mlocate database. However, this database does not update in real time and requires frequent updates for accurate results. This feature also means that the locate command does not search for files that were created since the last database update. for this command you have to be root.
+locate -n 1 passwd bu 1 adet sonuc getirir. cunku locate komutu nda outcome cok oluyor.
+
+updatedb this command update the database.
+
+
+FIND command
+it searches according such as the file's permissions, type of file, size, or modification time.
+find / -name '*.txt'
+find -user developer
+find / -user root -group mail
+find /home -perm 764
+find -perm -o=r
+find -size 10M
+find -size +10G more than 10 GB
+find /etc -type d  # Search for all directories in the /etc directory:
+find / -type l # Search for all soft links in the / directory:
+sudo find /var/lib -user chrony
+find /dev -type b # List all block device files in the /dev directory.
+
+The df command reports total disk space, used disk space, and free disk space on all mounted regular file systems.
+
+The lsblk command lists the details of block devices, such as the size and the UUID
 
 
 
+Chapter 14. Analyze Servers and Get Support
 
 
+Cockpit, bir Linux sunucuyu web tarayıcısı üzerinden yönetmek için kullanılan bir araçtır.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-https://rol.redhat.com/rol/app/courses/rh124-9.0/pages/ch11s05
-
-
-
-
-
-
-
-
-
-
-Red Hat System Administration II (RH134) course. bu kursa bi bak faydali olabilir selinux varmis.
-
-https://rol.redhat.com/rol/app/courses/rh124-9.0/pages/ch08s05
+bitti
