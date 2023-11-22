@@ -1,15 +1,114 @@
+var / log mail  temp spool files
+
+swap - ram ihtiyaci olunca buraya veriler tasinir pc de ram alani acilmis olur
+
+# booting
+1.acma tusuna bas
+2. bios calsiir
+3. mbr
+4. grup
+5. kernel
+6. systemd started
+
+
+yum repo list
 
 
 
+# acces linux
+ssh command line putty  gibi bir seyle
+gui- remote console
+ssh username@ip
+
+
+paket yuklumu bakmak icin¨
+rpm -qa | packet_name
+
+
+runlevel 0 poweroff
+runlevel 1 go to rescue shell
+runlevel 2 non-graphical multiuser
+runlevel 3 2 ile ayni
+runlevel 4 2 ile ayni
+runlevel 5 set a gpraphical user system
+runlevel 6 reboot system
+
+
+stdin in the keyboard 0 <
+stdout in the screen 1 >
+stderr 2 2>
+
+###  commands
+
+1. date --date="-1 day"
+    date --date="-1 year"
+
+2. ls
+3. pwd
+4. w mevcut kullanıcılarını ve bu kullanıcıların hangi terminalde (TTY) çalıştığını, ne kadar süre boyunca aktif olduklarını, CPU kullanımını ve diğer bazı bilgileri görüntüler
+
+"USER": Kullanıcı adı
+"TTY": Kullanıcının bağlı olduğu terminal (TTY)
+"FROM": Kullanıcının nereden bağlandığı (IP adresi veya bilgisayar adı)
+"LOGIN@": Kullanıcının ne zaman giriş yaptığı
+"IDLE": Kullanıcının ne kadar süre boyunca pasif olduğu
+"JCPU": Toplam CPU zamanı (işlemci zamanı)
+"PCPU": Anlık CPU kullanımı
+"WHAT": Kullanıcının çalıştırdığı komut veya uygulama
+
+5. uptime
+6. touch touch test{1..10}.txt
+7. rm
+8. mkdir
+9. cd
+10. ls -la
+11. time
+time ls -la Bu komutu çalıştırdığınızda, "ls -la" komutunun çalışma süresi, geçen gerçek zaman (real), CPU zamanı (user), sistem zamanı (sys) gibi bilgilerle birlikte çıktılanacaktır.
+12. cp
+13. mv
+14. last
+kullanıcıların oturum açma (login) ve çıkma (logout) tarihçesini görüntülemek için kullanılır
+/var/log/wtmp dosyasını inceleyerek bu bilgileri sağlar.
+15. nslookup
+16. tree
+17. stat -- Bu komut, dosya veya dizinin özelliklerini, boyutunu, sahibini, grup bilgisini, erişim izinlerini ve değişiklik zamanlarını içeren bir dizi bilgi sunar.
+18. man
+19. info
+20. cat
+21. whatis
+22. whoami
+23. whereis
+24. df mount point
+df -hT -x tmpfs
+df komutu, disk kullanımını raporlamak için kullanılır. -h bayrağı, insan tarafından okunabilir bir formatta (gigabayt, megabayt, vs.) çıktı almanızı sağlar. -T bayrağı, dosya sistemlerinin türünü (type) gösterir. -x bayrağı ise belirli bir dosya sistemini raporlamamak için kullanılır.
+Örneğin, df -hT -x tmpfs komutunu kullanarak, tmpfs dosya sistemini içermeyen tü
+25. du
+
+# hard link
+- same inode
+- no difference between original
+- not possible for directories
+- not possible in different file systems
+- deleting original file does not effect
+- icine yazinca digerinede yazar
+- size ayni olur
+
+# soft link
+- different inode numbers
+- there are differences with the original
+- possible for directories
+- possible for different file systems
+- icine yazinca digerinede yazar
+- deleting original file makes it inaccessable
+- soze lari ayni olmaz
+ln -s file_original soflink_file
+
+
+# Text Editor
 
 
 
-
-
-
-
-
-
+03.08 de kaldim
 
 
 https://www.youtube.com/watch?v=-wNfs5fRazI
