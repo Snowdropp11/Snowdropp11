@@ -105,10 +105,45 @@ ln -s file_original soflink_file
 
 
 # Text Editor
+nano yu gosterdi zaten butun kisa yollar altta goruluyr editoru acinca
+
+
+# Archiving compressing
+gzip   gun zip
+bzip   bun zip
+zip    unzip
+
+tar -cvf   tarfile   taryapialcakfile
+tar -uvf tarfile   update the file
+tar -tftarfile -- ierigi gosteririr
+tar -cvzf  compresed.tar.gz fileisimleri  buradaki z compress icin tar ile 12 olan tar.gz ile 4 oluyor.
+tar -cvzf file.tar.gz *.txt *.sh  bunlari hem arsivler hemde compress eder.
+tar -xzvf      file.tar.gz buda dosyayo extract eder.
+zip test.zip file_names
+zip -de file siler
+
+du -sh file yada direktory yaparsak onun size bilgisi veriler
+
+man
+pinfo
+whereis
+whatis
+grep -ci buyuk kucuk harf duyarliligi bakmaz
+grep -l ali    ali kelimesinin gectigi dosyalari gosteririr
+grep "demo$"      "demo$": Bu, "demo" kelimesinin metin içindeki sona gelmiş (satır sonu) halini ifade eder. $ sembolü, desenin bir satırın sonunda olması gerektiğini belirtir.
+
+
+openssh
+rpm -qai |grep openssh
+systemctl stop sshd
+systemctl start sshd
+vi /etc/ssh/sshd_config
 
 
 
-03.08 de kaldim
+
+
+4.45 de kaldim
 
 
 https://www.youtube.com/watch?v=-wNfs5fRazI
