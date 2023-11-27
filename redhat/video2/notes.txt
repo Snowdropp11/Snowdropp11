@@ -140,10 +140,47 @@ systemctl start sshd
 vi /etc/ssh/sshd_config
 
 
+scp dest_IP:/path
+dest in password sorar ve atar
+1 den fazla da dosya gonderilebilir
+scp -C file compreess eder
+scp -r ise recursive yapar yani alt dosya ve dizinleri de kopyalar
+scp -l limit koyar gonderirken file size da
+
+##process
+process: a program loaded into memory and exceting is called as process
+systemd with PID 1
+foreground process : initialled and controleld trough a terminal
+background process : automatic process not connected to a terminal
+
+process states: running - waiting - stopped - Zombie/Defunct - Orphaned
+ps -A see all running process
+ps -e yukari ile ayni
+ps -r yukari ile ayni
+ps -x see process ownwed by you
+ps -fU yusuf yusuf kullamnicisini process lerini gor
+ps -fG grup_Adi bu gurubun kileri gor
+ps -eo pid, ppid, user, cmd hangisini yazarasan bu verileri verir
+
+İşte ps -aux komutu ile ilgili temel bilgiler:
+ps: Process Status (İşlem Durumu) kısaltmasıdır.
+-aux: Bu seçenekler şu bilgileri sağlar:
+a: Diğer kullanıcıların işlemlerini de listeler.
+u: Kullanıcı (user) bilgilerini gösterir.
+x: Terminal ile ilişkili olmayan tüm işlemleri gösterir.
 
 
+ps -ef komutu, bir Unix veya Unix benzeri işletim sisteminde çalışan işlemleri listelemek için kullanılır. Bu komut genellikle Linux sistemlerinde yaygın olarak kullanılır ve işlemleri ayrıntılı bir şekilde gösterir. İşte bu komutun temel özellikleri:
+ps: Process Status'ın kısaltmasıdır.
+-e: Tüm işlemleri gösterir.
+-f: Tam detaylı (full) çıktı modunu kullanır.
+renice -4 -p proces_id bunu 4 yapar prioritsini
 
-4.45 de kaldim
+
+###file and directory permissions¨
+
+
+05:20 de kaldim
 
 
 https://www.youtube.com/watch?v=-wNfs5fRazI

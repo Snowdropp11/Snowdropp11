@@ -1,0 +1,19 @@
+CI continupus integration
+CD continupus deployment or delivery
+
+test build release
+
+job lar runner lar ile trigger edilince calsiir
+
+pipeline configuration file ee.gitlab-ci.yml
+
+
+
+bitti kurs
+
+
+
+
+
+
+https://www.youtube.com/watch?v=qP8kir2GUgo
