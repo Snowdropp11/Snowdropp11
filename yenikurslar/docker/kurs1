@@ -1,0 +1,31 @@
+
+OS kernel software- Hardware hypervisor then VM. VM icinde os lib ve dependencies ve applications
+docker work on OS . on docker application-
+
+docker run docker/whalesay cowsay ilhan   bu ne yazarsak en son onu gemi ile basar¨
+
+docker ps
+docker ps -a all the containers
+docker images
+docker rmi image_name
+docker pull image_name
+docker run pull ubuntu pwd  - bu son komutu calistirmak icin
+docker run ubuntu
+docker run -d ubuntu bunda arkada calsiir yukarida terminalde calisir ctrl c ile durdururuz
+docker attach container_ID ile baglayabiliriz
+
+
+
+docker run -v /opt/datadir:/var/lib/mysql mysql   volumeleri baglamam komutu
+
+docker inspect container_ID buda container hakkinda bilgi verir json formatta
+
+envorinmental variables
+docker run -e APP_COLOR=blue simple-wabapp-color
+
+docker images
+45.00 da kaldim
+
+
+
+https://www.youtube.com/watch?v=zJ6WbK9zFpI

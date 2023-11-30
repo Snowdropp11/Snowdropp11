@@ -1,0 +1,19 @@
+---
+- name: Sample Book
+  hosts: all
+  tasks:
+    - name: install htttpd
+      yum:
+        name: httpd
+        state: latest
+    - name: run httpd
+      service:
+        name: httpd
+        state: started
+    - name: create content
+      copy:
+        content: "my name is Yusuf"
+        dest: /var/www/html/index.html
+
+        #bitti
+  # https://www.youtube.com/watch?v=EcnqJbxBcM0

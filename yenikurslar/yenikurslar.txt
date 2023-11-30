@@ -1,1 +1,9 @@
-https://github.com/annfelix/DEVOPS-WORLD
+#!/bin/sh
+echo "what is your name?"
+read name
+echo "How do you do, $name?"
+read remark
+echo "I am $remark too!"
+
+
+# https://github.com/annfelix/DEVOPS-WORLD

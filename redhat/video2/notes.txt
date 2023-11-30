@@ -179,8 +179,35 @@ renice -4 -p proces_id bunu 4 yapar prioritsini
 
 ###file and directory permissions¨
 
+chmod u+x
+chmod 744 file
+chmod ug+rwx
+chmod u+x, g-rw file
 
-05:20 de kaldim
+
+creatingand deleting partition
+fdisk -l
+mount
+unmount
+
+#logical partitions
+LVM logical volume manager
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+05:53 de kaldim
 
 
 https://www.youtube.com/watch?v=-wNfs5fRazI
