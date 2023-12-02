@@ -1,4 +1,3 @@
-
 OS kernel software- Hardware hypervisor then VM. VM icinde os lib ve dependencies ve applications
 docker work on OS . on docker application-
 
@@ -23,8 +22,31 @@ docker inspect container_ID buda container hakkinda bilgi verir json formatta
 envorinmental variables
 docker run -e APP_COLOR=blue simple-wabapp-color
 
-docker images
-45.00 da kaldim
+
+
+bridge none host
+docker netwrok create --driver bridge --subnet 182.18.0.0/16 netwrok_name
+docker inspect contaiiner_name ile bilgi alabilriz
+
+# storage
+/var/lib/docker da dosylaar
+altinda image volume ler var mesela
+layered docker yapi olarak
+ayni seyi yuklerse cash den alir yeniden yuklemez
+imafe read only
+ama container layer read and write
+volume ile persistent olur
+
+#docker compose
+docker-compose.yml
+
+docker run -d -e MYSQL_ROOT_PASSWORD=db_pass123 --name mysql-db --network wp-mysql-network mysql:5.6
+netwrok e esleme
+
+docker run --network=wp-mysql-network -e DB_Host=mysql-db -e DB_Password=db_pass123 -p 38080:8080 --name webapp --link mysql-db:mysql-db -d kodekloud/simple-webapp-mysql
+
+
+bitti
 
 
 

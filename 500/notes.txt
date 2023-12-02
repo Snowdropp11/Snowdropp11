@@ -197,3 +197,13 @@ I want to scale up my Kubernetes Cluster up to a third Node, and with that insta
 
 verify plan apply
 
+
+
+
+
+1.12.23
+checkpoint
+
+fayadli link terraform icin
+https://spacelift.io/blog/importing-exisiting-infrastructure-into-terraform
+
