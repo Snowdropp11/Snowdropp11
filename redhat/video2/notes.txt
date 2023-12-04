@@ -195,6 +195,73 @@ LVM logical volume manager
 
 
 
+3 types of users
+1. superuser  adminstrator user  root UID - 0
+2. Normal user UID 1000 65000
+3. system user system account  ornek ftp user - veya NFS icin nfsnobody user  UID 1 - 999
+
+useradd ile home - login shell group .bashrc .bash_profile .bash_logout gibi seyler olusturulu
+"skeleton" (iskelet) kelimesinden türetilmiştir. Bu dizin, yeni kullanıcı hesapları oluşturulduğunda, genellikle kullanıcının ana dizinindeki başlangıç dosyalarının (örneğin, .bashrc, .profile, vb.) kopyalandığı bir şablondur
+Yeni bir kullanıcı hesabı oluşturulduğunda, sistem bu kullanıcı için bir ana dizin oluşturur ve bu dizinde /etc/skel dizininde bulunan dosyaları kopyalar. Bu sayede, her yeni kullanıcı aynı başlangıç dosyalarına ve yapılandırmalara sahip olur, böylece genel bir kullanıcı ortamı sağlanır
+etc/passwd    - /etc/shadow   --- /etc/skel
+
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+user x sifre 3 user id 4 group id
+
+
+/etc/defaults/useradd -- sunlari olusturur HOME: Yeni bir kullanıcının oluşturulduğunda atanacak varsayılan ana dizin.
+SHELL: Yeni bir kullanıcı oluşturulduğunda atanacak varsayılan kabuk (shell).
+GROUP: Yeni bir kullanıcı oluşturulduğunda atanacak varsayılan kullanıcı grubu.
+CREATE_MAIL_SPOOL: Eğer bu ayar etkinse, yeni bir kullanıcı için posta kutusu
+
+/etc/login.defs  - /etc/passwd, /etc/shadow ve diğer kullanıcı hesaplarını yöneten dosyalardaki ayarları belirler.
+Bu dosyadaki bazı önemli ayarlar şunlar olabilir:
+PASS_MAX_DAYS: Kullanıcıların şifrelerini en fazla kaç gün boyunca kullanabileceğini belirler.
+PASS_MIN_DAYS: Kullanıcıların şifrelerini değiştirmek için en az kaç gün beklemeleri gerektiğini belirler.
+PASS_WARN_AGE: Şifre değiştirme uyarısının kaç gün önce görüntüleneceğini belirler.
+UID_MIN ve UID_MAX: Yeni kullanıcı hesapları oluşturulurken atanacak olan kullanıcı kimlik numarasının (UID) aralığını belirler.
+GID_MIN ve GID_MAX: Yeni gruplar oluşturulurken atanacak olan grup kimlik numarasının (GID) aralığını belirler.
+LOGIN_RETRIES: Bir kullanıcı yanlış şifre girişi yaptığında kaç kez tekrar denemesine izin verileceğini belirler.
+LOGIN_TIMEOUT: Oturum açma ekranında kullanıcının bir giriş yapmaması durumunda bekleyeceği süreyi belirler.
+
+
+useradd test1
+passwd test1
+useradd -u 2000 -g test1 -G aravi,test1 -c "yusuf home" -s /bin/bash -d /opt/rhcsa -e 2018-08-28 -p yusuff² yusuf
+-G aravi,test1: Kullanıcının ayrıca üye olacağı ek grupları belirtir. Bu durumda, kullanıcı "aravi" ve "test1" gruplarına üye olacaktır.
+-c "yusuf home": Kullanıcı için bir comment veya açıklama ekler. Bu durumda, "yusuf home" olarak belirlenmiştir.
+-d /opt/rhcsa: Kullanıcının ana dizinini belirtir. Bu durumda, kullanıcının ana dizini "/opt/rhcsa" olarak belirlenmiştir.
+-e 2018-08-28: Kullanıcının hesabının ne zaman sona ereceğini belirtir. Bu durumda, hesap 2018-08-28 tarihinde sona erecektir.
+-p yusuff²: Kullanıcının şifresini belirtir. Ancak, güvenlik nedenleriyle genellikle şifreleri açık metin olarak belirtmek önerilmez. Şifreler genellikle başka bir yöntemle ayarlanır, örneğin passwd komutu kullanılarak.
+en son yusuf ise kullanici adi
+
+usermod -l yusuf test1
+usermod: Kullanıcı hesap ayarlarını değiştirmek için kullanılan komuttur.
+test1: Değiştirilecek olan kullanıcının mevcut login adıdır
+-l yusuf: yeni login adını belirtir.
+
+
+usermod -m -d /yeni_dizin yusuf
+Bu komut, "yusuf" adlı kullanıcının home dizinini "/yeni_dizin" olarak değiştirir ve kullanıcı dosyalarını bu yeni dizine taşır
+
+usermod -aG grup1,grup2 yusuf
+Bu komut, "yusuf" adlı kullanıcıyı "grup1" ve "grup2" adlı gruplara ekler. Bu tür bir komut genellikle kullanıcı hesaplarıyla grup üyeliği yönetiminde kullanılır
+
+usermod -s /bin/bash yusuf
+Bu komut, "yusuf" adlı kullanıcının kabuk ayarlarını "/bin/bash" olarak değiştirir. Kullanıcı "yusuf" bundan sonra "/bin/bash" kabuğunu kullanarak oturum açacaktır.
+
+usermod -L lock the user
+usermod -U unluck the user
+
+chage -l yusuf
+Bu komut, "yusuf" adlı kullanıcının hesap parametrelerini görüntüler sunlari yani
+Last password change                                    : never
+Password expires                                        : never
+Password inactive                                       : never
+Account expires                                         : never
+Minimum number of days between password change          : 0
+Maximum number of days between password change          : 99999
+Number of days of warning before password expires       : 7
 
 
 
@@ -207,7 +274,8 @@ LVM logical volume manager
 
 
 
-05:53 de kaldim
+
+07:11 de kaldim
 
 
 https://www.youtube.com/watch?v=-wNfs5fRazI
