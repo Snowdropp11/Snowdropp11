@@ -1,4 +1,10 @@
 resource "local_file" "pet" {
-    filename = "/root/test.tf"
-    content = "my name is yusuf"
+  filename = "/root/test.tf"
+  content  = "my name is yusuf"
+}
+
+variable "filename" {
+
+  default = "Mrs"
+
 }
